@@ -1,14 +1,14 @@
-import "./AboutMe.css";
-import { useGetAboutMeQuery, useGetHomeDetailsQuery } from "../../Api/api";
-import { useEffect, useState } from "react";
-import decor1 from "../../images/decoration/dots-1.png";
-import reactagle from "../../images/decoration/Rectangle-7.png";
-import shady from "../../images/decoration/dots.png";
+import './AboutMe.css';
+import { useGetAboutMeQuery, useGetHomeDetailsQuery } from '../../Api/api';
+import { useEffect, useState } from 'react';
+import decor1 from '../../images/decoration/dots-1.png';
+import reactagle from '../../images/decoration/Rectangle-7.png';
+import shady from '../../images/decoration/dots.png';
 
 const AboutMe = () => {
   const { data: aboutData, isFetching } = useGetAboutMeQuery();
   const [aboutMe, setAboutMe] = useState(aboutData);
-  const img_300 = "https://drive.google.com/uc?id=";
+  const img_300 = 'https://drive.google.com/uc?id=';
 
   const { data: conta2 } = useGetHomeDetailsQuery();
   const [contacts1Details, setContact2Details] = useState(conta2);
@@ -25,36 +25,36 @@ const AboutMe = () => {
     <>
       {aboutMe &&
         aboutMe.map((details) => (
-          <main id="about" key={details.id}>
-            <div className="aboutMe-container">
-              <div className="about-decor">
-                <div className="about-dots">
-                  <img src={decor1} alt="" />
+          <main id='about' key={details.id}>
+            <div className='aboutMe-container'>
+              <div className='about-decor'>
+                <div className='about-dots'>
+                  <img src={decor1} alt='' />
                 </div>
-                <div className="about-rect">
-                  <img src={reactagle} alt="" />
+                <div className='about-rect'>
+                  <img src={reactagle} alt='' />
                 </div>
-                <div className="about-shady">
-                  <img src={shady} alt="" />
+                <div className='about-shady'>
+                  <img src={shady} alt='' />
                 </div>
               </div>
-              <div className="abouMe-row">
+              <div className='abouMe-row'>
                 <div
-                  className=" col-lg-6 col-md-5 col-sm-12 about-img"
-                  data-aos="fade-up-right"
+                  className=' col-lg-6 col-md-5 col-sm-12 about-img'
+                  data-aos='fade-up-right'
                 >
-                  <img src={`${img_300}${details.about_avatar}`} alt="" />
+                  <img src={`${img_300}${details.about_avatar}`} alt='' />
                 </div>
                 <div
-                  className=" col-lg-6 col-md-7  col-sm-12 about_myinfo"
-                  data-aos="fade-up-left"
+                  className=' col-lg-6 col-md-7  col-sm-12 about_myinfo'
+                  data-aos='fade-up-left'
                 >
-                  <div className="title">
+                  <div className='title'>
                     <h2>{details.title}</h2>
                     <h3>{details.title_2}</h3>
                   </div>
-                  <div className="about-description">
-                    <div id="foo" unselectable="on" class="unselectable">
+                  <div className='about-description'>
+                    <div id='foo' unselectable='on' class='unselectable'>
                       <div
                         dangerouslySetInnerHTML={{
                           __html: `${details.description_one}`,
@@ -63,15 +63,15 @@ const AboutMe = () => {
                     </div>
                   </div>
 
-                  <div className="itscv">
+                  <div className='itscv'>
                     <a
-                      href="https://drive.google.com/file/d/127RCSy1lUZE2sS8IgkxxPcUqbw1rYMOR/view"
-                      download="RESUME.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href='https://drive.google.com/file/d/1XK4XQQItZcgaGNSYzkTVp_ZX-6YHuSz1/view'
+                      download='RESUME.pdf'
+                      target='_blank'
+                      rel='noopener noreferrer'
                     >
-                      <button className="download-cv">
-                        Download Cv <i class="bx bx-download"></i>
+                      <button className='download-cv'>
+                        Download Cv <i class='bx bx-download'></i>
                       </button>
                     </a>
                   </div>

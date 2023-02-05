@@ -1,23 +1,23 @@
-import "./progress.css";
-import { useGetLanguagesIconsQuery } from "../../Api/api";
-import { useEffect, useState } from "react";
-import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
-import $ from "jquery";
+import './progress.css';
+import { useGetLanguagesIconsQuery } from '../../Api/api';
+import { useEffect, useState } from 'react';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import $ from 'jquery';
 
-var nav = $("body");
+var nav = $('body');
 
 if (nav.length) {
   var offsetTop = nav.offset().top;
-  $(window).on("scroll", function () {
+  $(window).on('scroll', function () {
     var height = $(window).height();
     if ($(window).scrollTop() + height > offsetTop) {
-      $(".fullwidth").each(function () {
+      $('.fullwidth').each(function () {
         $(this)
-          .find(".skill-bar")
+          .find('.skill-bar')
           .animate(
             {
-              width: $(this).attr("data-percent"),
+              width: $(this).attr('data-percent'),
             },
             2000
           );
@@ -35,7 +35,7 @@ const Progress = () => {
     setIcons(langIcons);
   }, [langIcons]);
 
-  if (isFetching) return "loading";
+  if (isFetching) return 'loading';
 
   const responsive = {
     0: {
@@ -66,10 +66,10 @@ const Progress = () => {
 
   const items = icons?.map((details4) => {
     return (
-      <div className="mylang" title={details4.lang_name} key={details4.id}>
-        <div className="lang-info">
-          <div className="lang-img">
-            <img src={details4.icon} alt="" />
+      <div className='mylang' title={details4.lang_name} key={details4.id}>
+        <div className='lang-info'>
+          <div className='lang-img'>
+            <img src={details4.icon} alt='' />
           </div>
           <h3>{details4.lang_name}</h3>
           <p className={`${details4.exp_level}`}>{details4.exp_level}</p>
@@ -79,15 +79,15 @@ const Progress = () => {
   });
   return (
     <>
-      <section id="skills">
-        <div className="progress-container">
-          <div className="progress-title">
+      <section id='skills'>
+        <div className='progress-container'>
+          <div className='progress-title'>
             <h2>My Skills Progress so far</h2>
 
             <h3>My Skills</h3>
           </div>
-          <div className="progress-row2">
-            <div className="lang">
+          <div className='progress-row2'>
+            <div className='lang'>
               <AliceCarousel
                 infinite
                 autoPlay
